@@ -1,0 +1,64 @@
+body{
+  background-color: gold;
+}
+.container {
+  position: relative;
+  
+}
+
+.center {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.left {
+  position: absolute;
+  top: 200px;
+  left: 25px;
+  font-size: 18px;
+}
+
+.right {
+  position: absolute;
+  top: 200px;
+  right: 100px;
+  font-size: 18px;
+}
+
+img {
+    height: 250px;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.footer {
+  position: absolute;
+  top: 550px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  left: 400px;
+
+}
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: aqua;
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
+  

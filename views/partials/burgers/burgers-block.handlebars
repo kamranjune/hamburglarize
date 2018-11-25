@@ -1,0 +1,31 @@
+<li>
+
+
+
+	<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burgers-block devoured=false}}
+    <button class="eat-burger" data-id="{{this.id}}">"Rubble Rubble!"</button>
+
+    {{/unless}}
+    
+    {{#if devoured}}
+      {{> burgers/burgers-block devoured=true}}
+    {{/if}}
+
+  {{/each}}
+</ul>
+
+
+
+	{{burger_name}}
+
+
+	<button class="devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		{{#if devoured}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+	</button>
+
+
+	<button class="eat-burger" data-id="{{this.id}}">"Rubble Rubble!"</button>
+</li>
