@@ -1,6 +1,6 @@
 <div id="container" class="container">
   <div class="center">
-    <h1 id="top">HAMBURGLAR!</h1>
+    <h1 id="top">HAMBURGLAR-IZE!</h1>
     <h2>Add a Burger you want Hamburglar to eat and then hit "Rubble Rubble"</h2>
 
     <a href="#video"><img src="./assets/img/burger.png"></a>
@@ -20,7 +20,7 @@
 <div class="left">
     <ul>
   
-  {{#each burgers}}
+  {{#each Post}}
     
       {{#unless devoured}}
       <li>
@@ -37,7 +37,7 @@
 
   <div class="right">
     <ul>
-      {{#each burgers}}
+      {{#each Post}}
       {{#if devoured}}
       <li>
         {{this.burger_name}}

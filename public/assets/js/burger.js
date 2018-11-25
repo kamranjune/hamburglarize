@@ -11,6 +11,7 @@ $(function() {
   
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
+        //$.ajax("/api/burgers/", {
         type: "PUT",
         data: newDevouredState
       }).then(
@@ -28,7 +29,10 @@ $(function() {
       event.preventDefault();
   
       var newBurger = {
-        burgerName: $("#burger-name").val().trim(),
+        //burgerName: $("#burger-name").val().trim(),
+        //n.b. for sequelize you must use burger_name not burgerName bc it is not ur ORM
+        //must match db variable names so underscores must be used
+        burger_name: $("#burger-name").val().trim(),
         devoured: 0
       };
   

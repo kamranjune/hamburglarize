@@ -17,7 +17,8 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the posts
-  app.get("/api/posts", function(req, res) {
+  //app.get("/api/posts", function(req, res) {
+    app.get("/", function(req, res) {
     //var query = {};
     //if (req.query.burger_id) {
     //  query.BurgerId = req.query.burger_id;
@@ -29,14 +30,18 @@ module.exports = function(app) {
         //where: query,
         //include: [db.Author]
     }).then(function(dbPost) {
-      res.json(dbPost);
+      var hbsObject = {
+        Post : dbPost
+      };
+      console.log (hbsObject);
+      res.render("index", hbsObject);
     });
   });
 
 
 
   // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
+  app.post("/api/burgers", function(req, res) {
     db.Post.create(req.body).then(function(dbPost) {
       res.json(dbPost);
     });
@@ -56,12 +61,13 @@ module.exports = function(app) {
 
 
   // PUT route for updating posts
-  app.put("/api/posts", function(req, res) {
-    db.Post.update(
-      req.body,
-      {
+  app.put("/api/burgers/:id", function(req, res) {
+    //app.put("/api/burgers/", function(req, res) {
+    db.Post.update({
+      devoured : req.body.devoured,
+    }, {
         where: {
-          devoured: req.body.devoured
+          id: req.params.id
         }
       }).then(function(dbPost) {
       res.json(dbPost);
